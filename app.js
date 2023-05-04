@@ -147,8 +147,8 @@ app.post("/delete", function(req, res){
 app.get("/:customListName", function(req, res){
   const customListName = lodash.capitalize(req.params.customListName);
 
-  List.findOne({name: customListName}).then(function(res){
-      if(!res){
+  List.findOne({name: customListName}).then(function(result){
+      if(result == null){
         const list = new List(
           {
             name: customListName,
