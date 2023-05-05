@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const lodash = require('lodash')
-const mongodb = require('mongodb')
 
 const app = express();
 
