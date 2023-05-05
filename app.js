@@ -51,30 +51,6 @@ const listSchema = new mongoose.Schema(
 
 const List = mongoose.model('List', listSchema)
 
-// const yes = new List(
-//   {
-//     name: "work",
-//     items:
-//     [
-//       {
-//       name:"i am busy"
-//       },
-//       {
-//         name:"i am yayyyy"
-//       }
-//     ]
-//   });
-// const no = new List(
-//   {
-//     name: "PLay",
-//     items:{
-//       name:"i am ply"
-//     }
-//   });
-
-// yes.save();
-// no.save();
-
 
 
 const defaultItems = [cook, play, rest];
