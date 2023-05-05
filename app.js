@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const lodash = require('lodash')
+const mongodb = require('mongodb')
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/TodolistDB');
+mongoose.connect('mongodb+srv://utsavdas10:guitarislife10@cluster0.2mfg8bb.mongodb.net/TodolistDB?retryWrites=true&w=majority');
 
 const itemSchema = new mongoose.Schema(
   {
