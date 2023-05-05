@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const lodash = require('lodash')
+const lodash = require('lodash');
+const url = require('./hidden')
 
 const app = express();
 
@@ -11,7 +12,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect('mongodb+srv://utsavdas10:guitarislife10@cluster0.2mfg8bb.mongodb.net/TodolistDB?retryWrites=true&w=majority');
+mongoose.connect(url).then(function(){
+  console.log("Connected to MongoDB server...");
+});
 
 const itemSchema = new mongoose.Schema(
   {
