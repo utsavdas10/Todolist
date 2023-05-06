@@ -1,8 +1,8 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const lodash = require('lodash');
-const url = require('./hidden')
 
 const app = express();
 
@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+
+const url = 'mongodb+srv://utsavdas10:'+process.env.PASSWORD+'@cluster0.2mfg8bb.mongodb.net/TodolistDB?retryWrites=true&w=majority';
 
 mongoose.connect(url).then(function(){
   console.log("Connected to MongoDB server...");
